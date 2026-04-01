@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t stephengrider/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t xiaoqingyuan/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true stephengrider/react-test npm test
+  - docker run -e CI=true xiaoqingyuan/react-test npm test
 
 after_success:
   - docker build -t xiaoqingyuan/multi-client ./client
