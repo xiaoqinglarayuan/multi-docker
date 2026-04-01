@@ -1,0 +1,14 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name:": "client",
+      "image": "stephengrider/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server"
+    }
+  ]
+}
