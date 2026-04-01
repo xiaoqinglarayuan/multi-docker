@@ -9,14 +9,14 @@ script:
   - docker run -e CI=true xiaoqingyuan/react-test npm test
 
 after_success:
-  - docker build -t xiaoqingyuan/multi-client ./client
-  - docker build -t xiaoqingyuan/multi-nginx ./nginx
-  - docker build -t xiaoqingyuan/multi-server ./server
-  - docker build -t xiaoqingyuan/multi-worker ./worker
+  - docker build -t xiaoqingyuan/multi-client:latest ./client
+  - docker build -t xiaoqingyuan/multi-nginx:latest ./nginx
+  - docker build -t xiaoqingyuan/multi-server:latest ./server
+  - docker build -t xiaoqingyuan/multi-worker:latest ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push xiaoqingyuan/multi-client
-  - docker push xiaoqingyuan/multi-nginx
-  - docker push xiaoqingyuan/multi-server
-  - docker push xiaoqingyuan/multi-worker
+  - docker push xiaoqingyuan/multi-client:latest
+  - docker push xiaoqingyuan/multi-nginx:latest
+  - docker push xiaoqingyuan/multi-server:latest
+  - docker push xiaoqingyuan/multi-worker:latest
